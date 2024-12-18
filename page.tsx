@@ -1,14 +1,14 @@
-import Image from "next/image"
-import { Timer, Star, CheckCircle, Phone, Calendar, MessageCircle } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { BookingForm } from "@/components/BookingForm"
-import { FAQAccordion } from "@/components/FAQAccordion"
-import { TestimonialCarousel } from "@/components/TestimonialCarousel"
-import { BeforeAfterGallery } from "@/components/BeforeAfterGallery"
-import { CountdownTimer } from "@/components/CountdownTimer"
+import Image from "next/image"
+import { Timer, Star, CheckCircle, Phone, Calendar, MessageCircle } from 'lucide-react'
+import { BookingForm } from "./booking-form"
+import { FAQAccordion } from "./faq-accordion"
+import { TestimonialCarousel } from "./testimonial-carousel"
+import { BeforeAfterGallery } from "./before-after-gallery"
+import { CountdownTimer } from "./countdown-timer"
 
-export default function Home() {
+export default function LandingPage() {
   return (
     <div className="min-h-screen bg-[#F5F1EB]">
       {/* Sticky Header */}
