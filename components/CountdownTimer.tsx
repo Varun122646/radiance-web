@@ -34,18 +34,18 @@ export function CountdownTimer({ targetDate }: CountdownTimerProps) {
   }, [targetDate])
 
   return (
-    <div className="flex gap-2 text-sm">
+    <div className="flex gap-1 sm:gap-2 text-xs sm:text-sm">
       <div className="text-center">
         <div className="font-mono font-bold">{timeLeft.days}</div>
-        <div className="text-xs text-muted-foreground">Days</div>
+        <div className="text-[10px] sm:text-xs text-muted-foreground">Days</div>
       </div>
       <div className="text-center">
         <div className="font-mono font-bold">{timeLeft.hours}</div>
-        <div className="text-xs text-muted-foreground">Hours</div>
+        <div className="text-[10px] sm:text-xs text-muted-foreground">Hours</div>
       </div>
       <div className="text-center">
         <div className="font-mono font-bold">{timeLeft.minutes}</div>
-        <div className="text-xs text-muted-foreground">Mins</div>
+        <div className="text-[10px] sm:text-xs text-muted-foreground">Mins</div>
       </div>
     </div>
   )

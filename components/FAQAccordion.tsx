@@ -9,16 +9,16 @@ import {
 
 export function FAQAccordion() {
   return (
-    <section className="container py-12 md:py-24">
+    <section className="container-custom py-8 md:py-12 lg:py-16">
       <div className="mx-auto max-w-3xl">
-        <h2 className="text-3xl font-bold tracking-tighter text-center mb-8">
+        <h2 className="text-2xl font-bold tracking-tighter text-center mb-6 sm:text-3xl md:text-4xl text-balance">
           Frequently Asked Questions
         </h2>
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((faq, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger>{faq.question}</AccordionTrigger>
-              <AccordionContent>{faq.answer}</AccordionContent>
+              <AccordionTrigger className="text-sm sm:text-base">{faq.question}</AccordionTrigger>
+              <AccordionContent className="text-xs sm:text-sm">{faq.answer}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>

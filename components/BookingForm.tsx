@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { useToast } from "@/components/ui/use-toast"
+import { useToast } from "@/hooks/use-toast"
 
 export function BookingForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -27,42 +27,42 @@ export function BookingForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="grid gap-4">
+    <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+      <div className="grid gap-3 sm:gap-4">
         <Input
           type="text"
           name="name"
           placeholder="Your Name"
           required
-          className="bg-[#F5F1EB]"
+          className="bg-[#F5F1EB] text-sm"
         />
         <Input
           type="tel"
           name="phone"
           placeholder="Phone Number"
           required
-          className="bg-[#F5F1EB]"
+          className="bg-[#F5F1EB] text-sm"
         />
         <Input
           type="email"
           name="email"
           placeholder="Email Address"
           required
-          className="bg-[#F5F1EB]"
+          className="bg-[#F5F1EB] text-sm"
         />
         <Input
           type="date"
           name="preferred_date"
           required
-          className="bg-[#F5F1EB]"
+          className="bg-[#F5F1EB] text-sm"
         />
         <Textarea
           name="message"
           placeholder="Any specific concerns? (Optional)"
-          className="bg-[#F5F1EB]"
+          className="bg-[#F5F1EB] text-sm"
         />
       </div>
-      <Button type="submit" className="w-full bg-[#8B5E3C] hover:bg-[#8B5E3C]/90 text-[#F5F1EB]" disabled={isSubmitting}>
+      <Button type="submit" className="w-full bg-[#8B5E3C] hover:bg-[#8B5E3C]/90 text-[#F5F1EB] text-sm" disabled={isSubmitting}>
         {isSubmitting ? "Submitting..." : "Book Free Consultation"}
       </Button>
       <p className="text-xs text-center text-muted-foreground">

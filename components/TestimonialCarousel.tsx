@@ -13,13 +13,13 @@ import Image from "next/image"
 
 export function TestimonialCarousel() {
   return (
-    <section className="bg-[#D6CEC4]/50 py-12 md:py-24">
-      <div className="container">
-        <div className="text-center space-y-4 mb-12">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+    <section className="bg-[#D6CEC4]/50 py-8 md:py-12 lg:py-16">
+      <div className="container-custom">
+        <div className="text-center space-y-4 mb-8 sm:mb-12">
+          <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl text-balance">
             What Our Clients Say
           </h2>
-          <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+          <p className="mx-auto max-w-[700px] text-gray-500 text-sm sm:text-base md:text-lg">
             Real stories from our happy brides
           </p>
         </div>
@@ -32,31 +32,31 @@ export function TestimonialCarousel() {
         >
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                <Card className="p-6">
-                  <div className="flex gap-1 mb-4">
+              <CarouselItem key={index} className="sm:basis-1/2 lg:basis-1/3">
+                <Card className="p-4 sm:p-6">
+                  <div className="flex gap-1 mb-2 sm:mb-4">
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
-                        className="h-4 w-4 text-yellow-400"
+                        className="h-3 w-3 sm:h-4 sm:w-4 text-yellow-400"
                         fill="currentColor"
                       />
                     ))}
                   </div>
-                  <blockquote className="mb-4 text-sm">
+                  <blockquote className="mb-2 sm:mb-4 text-xs sm:text-sm">
                     "{testimonial.quote}"
                   </blockquote>
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-2 sm:gap-4">
                     <Image
                       src={testimonial.avatar}
                       alt={testimonial.name}
-                      width={40}
-                      height={40}
+                      width={32}
+                      height={32}
                       className="rounded-full"
                     />
                     <div>
-                      <p className="font-semibold">{testimonial.name}</p>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="font-semibold text-xs sm:text-sm">{testimonial.name}</p>
+                      <p className="text-xs text-muted-foreground">
                         {testimonial.title}
                       </p>
                     </div>

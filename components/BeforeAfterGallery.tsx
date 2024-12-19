@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from "react"
 import Image from "next/image"
 import { Card } from "@/components/ui/card"
 import {
@@ -10,17 +9,16 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import ba from "@/public/BA/1.png"
 
 export function BeforeAfterGallery() {
-  const [activeImage, setActiveImage] = useState(0)
-
   return (
-    <section className="container py-12 md:py-24">
-      <div className="text-center space-y-4 mb-12">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+    <section className="container-custom py-8 md:py-12 lg:py-16">
+      <div className="text-center space-y-4 mb-8 sm:mb-12">
+        <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl text-balance">
           Real Results
         </h2>
-        <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+        <p className="mx-auto max-w-[700px] text-gray-500 text-sm sm:text-base md:text-lg">
           See the transformation our clients experience
         </p>
       </div>
@@ -33,24 +31,20 @@ export function BeforeAfterGallery() {
       >
         <CarouselContent>
           {beforeAfterImages.map((image, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-              <Card className="p-4 bg-[#F5F1EB] text-[#1C1C1C]">
+            <CarouselItem key={index} className="sm:basis-1/2 lg:basis-1/3">
+              <Card className="p-2 sm:p-4 bg-[#F5F1EB] text-[#1C1C1C]">
                 <div className="relative aspect-[4/5]">
                   <Image
-                    src={activeImage === index ? image.after : image.before}
+                    src={ba}
                     alt={`Before and After - ${image.area}`}
                     fill
                     className="object-cover rounded"
                   />
-                  <button
-                    className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors"
-                    onMouseEnter={() => setActiveImage(index)}
-                    onMouseLeave={() => setActiveImage(-1)}
-                  >
-                    <span className="sr-only">Toggle before/after</span>
+                  <button className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors">
+                    <span className="sr-only">View before/after image</span>
                   </button>
-                  <div className="absolute bottom-4 left-4 right-4 text-center">
-                    <p className="text-sm font-medium bg-white/90 rounded-full px-4 py-2">
+                  <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 right-2 sm:right-4 text-center">
+                    <p className="text-xs sm:text-sm font-medium bg-white/90 rounded-full px-2 py-1 sm:px-4 sm:py-2">
                       {image.area}
                     </p>
                   </div>
@@ -67,25 +61,9 @@ export function BeforeAfterGallery() {
 }
 
 const beforeAfterImages = [
-  {
-    before: "/placeholder.svg",
-    after: "/placeholder.svg",
-    area: "Upper Lip",
-  },
-  {
-    before: "/placeholder.svg",
-    after: "/placeholder.svg",
-    area: "Full Arms",
-  },
-  {
-    before: "/placeholder.svg",
-    after: "/placeholder.svg",
-    area: "Full Legs",
-  },
-  {
-    before: "/placeholder.svg",
-    after: "/placeholder.svg",
-    area: "Underarms",
-  },
+  { area: "Upper Lip" },
+  { area: "Full Arms" },
+  { area: "Full Legs" },
+  { area: "Underarms" },
 ]
 
