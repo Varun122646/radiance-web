@@ -9,7 +9,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-import ba from "@/public/BA/1.png"
+import BA from "@/public/BA/3.png"
+import BA1 from "@/public/BA/4.png"
+import BA2 from "@/public/BA/2.png"
+import BA3 from "@/public/BA/2.png"
 
 export function BeforeAfterGallery() {
   return (
@@ -30,28 +33,59 @@ export function BeforeAfterGallery() {
         className="mx-auto max-w-5xl"
       >
         <CarouselContent>
-          {beforeAfterImages.map((image, index) => (
-            <CarouselItem key={index} className="sm:basis-1/2 lg:basis-1/3">
-              <Card className="p-2 sm:p-4 bg-[#F5F1EB] text-[#1C1C1C]">
-                <div className="relative aspect-[4/5]">
-                  <Image
-                    src={ba}
-                    alt={`Before and After - ${image.area}`}
-                    fill
-                    className="object-cover rounded"
-                  />
-                  <button className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors">
-                    <span className="sr-only">View before/after image</span>
-                  </button>
-                  <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 right-2 sm:right-4 text-center">
-                    <p className="text-xs sm:text-sm font-medium bg-white/90 rounded-full px-2 py-1 sm:px-4 sm:py-2">
-                      {image.area}
-                    </p>
-                  </div>
+          <CarouselItem className="sm:basis-1/2 lg:basis-1/3">
+            <Card className="p-2 sm:p-4 bg-[#F5F1EB] text-[#1C1C1C]">
+              <div className="relative aspect-[4/5]">
+                <Image
+                  src={BA}
+                  alt="Before and After - Upper Lip"
+                  fill
+                  className="object-cover object-left	 rounded"
+                />
+                <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 right-2 sm:right-4 text-center">
+                  <p className="text-xs sm:text-sm font-medium bg-white/90 rounded-full px-2 py-1 sm:px-4 sm:py-2">
+                    Upper Lip
+                  </p>
                 </div>
-              </Card>
-            </CarouselItem>
-          ))}
+              </div>
+            </Card>
+          </CarouselItem>
+
+          <CarouselItem className="sm:basis-1/2 lg:basis-1/3">
+            <Card className="p-2 sm:p-4 bg-[#F5F1EB] text-[#1C1C1C]">
+              <div className="relative aspect-[4/5]">
+                <Image
+                  src={BA2}
+                  alt="Before and After - Full Arms"
+                  fill
+                  className="object-cover object-left rounded"
+                />
+                <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 right-2 sm:right-4 text-center">
+                  <p className="text-xs sm:text-sm font-medium bg-white/90 rounded-full px-2 py-1 sm:px-4 sm:py-2">
+                    Full Back
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </CarouselItem>
+
+          <CarouselItem className="sm:basis-1/2 lg:basis-1/3">
+            <Card className="p-2 sm:p-4 bg-[#F5F1EB] text-[#1C1C1C]">
+              <div className="relative aspect-[4/5]">
+                <Image
+                  src={BA1}
+                  alt="Before and After - Full Legs"
+                  fill
+                  className="object-cover object-left rounded"
+                />
+                <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 right-2 sm:right-4 text-center">
+                  <p className="text-xs sm:text-sm font-medium bg-white/90 rounded-full px-2 py-1 sm:px-4 sm:py-2">
+                    Facial
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </CarouselItem>
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
@@ -59,11 +93,4 @@ export function BeforeAfterGallery() {
     </section>
   )
 }
-
-const beforeAfterImages = [
-  { area: "Upper Lip" },
-  { area: "Full Arms" },
-  { area: "Full Legs" },
-  { area: "Underarms" },
-]
 

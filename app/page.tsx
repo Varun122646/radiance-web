@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image"
 import { Timer, Star, CheckCircle, Phone, Calendar, MessageCircle } from 'lucide-react'
 import { Button } from "@/components/ui/button"
@@ -10,8 +11,15 @@ import { CountdownTimer } from "@/components/CountdownTimer"
 import logo from "@/public/Logo.png"
 import hero from "@/public/Laser 1_2.1.1.jpg"
 import hero2 from "@/public/Laser 2_2.1.2.jpg"
+import { useRef } from "react"
 
 export default function Home() {
+  const bookingFormRef = useRef<HTMLDivElement>(null)
+
+  const scrollToBookingForm = () => {
+    bookingFormRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
     <div className="min-h-screen bg-[#F5F1EB]">
       {/* Sticky Header */}
@@ -19,20 +27,16 @@ export default function Home() {
         <div className="container-custom flex h-10 items-center justify-between">
           <div className="flex items-center gap-2 ">
             <Image
-              src= {logo}
+              src={logo}
               alt="Radiance Clinic Logo"
               width={50}
               height={30}
               className="dark:invert contrast-50	p-1"
             />
-            <span className="text-2xl font-bold text-[#8f4955]">Radiance Clinic</span>
+            <span className="md:text-2xl font-bold text-[#8f4955]">Radiance Clinic</span>
           </div>
           <div className="flex items-center gap-4 ">
-            {/* <a href="tel:+91XXXXXXXXXX" className="flex items-center gap-2 text-sm hover:text-[#8B5E3C]">
-              <Phone className="h-4 w-4" />
-              +91-XXXXXXXXXX
-            </a> */}
-            <Button className="bg-[#8B5E3C] hover:bg-[#8B5E3C]/90" size="sm">Book Consultation</Button>
+            <Button className="bg-[#8B5E3C] hover:bg-[#8B5E3C]/90" size="sm" onClick={scrollToBookingForm}>Book Consultation</Button>
           </div>
         </div>
       </header>
@@ -51,11 +55,8 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex flex-col gap-2 sm:flex-row">
-                <Button size="sm" className="bg-[#8B5E3C] hover:bg-[#8B5E3C]/90">
+                <Button size="sm" className="bg-[#8B5E3C] hover:bg-[#8B5E3C]/90" onClick={scrollToBookingForm}>
                   Book Your Free Consultation
-                </Button>
-                <Button size="sm" variant="outline">
-                  Learn More
                 </Button>
               </div>
               <div className="flex items-center gap-2 pt-4">
@@ -143,7 +144,7 @@ export default function Home() {
       </section>
 
       {/* Booking Form Section */}
-      <section className="container-custom py-8 md:py-12 lg:py-16">
+      <section ref={bookingFormRef} className="container-custom py-8 md:py-12 lg:py-16">
         <div className="mx-auto max-w-4xl">
           <Card className="p-4 sm:p-6 md:p-8 lg:p-12">
             <div className="grid gap-6 lg:grid-cols-2">

@@ -47,13 +47,6 @@ export function TestimonialCarousel() {
                     "{testimonial.quote}"
                   </blockquote>
                   <div className="flex items-center gap-2 sm:gap-4">
-                    <Image
-                      src={testimonial.avatar}
-                      alt={testimonial.name}
-                      width={32}
-                      height={32}
-                      className="rounded-full"
-                    />
                     <div>
                       <p className="font-semibold text-xs sm:text-sm">{testimonial.name}</p>
                       <p className="text-xs text-muted-foreground">
