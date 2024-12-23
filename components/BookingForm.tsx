@@ -29,7 +29,7 @@ export function BookingForm() {
         </div>
       )}
       <InlineWidget
-        url="https://calendly.com/varun-bartergram/30min" // Replace with your actual Calendly link
+        url={process.env.NEXT_PUBLIC_CALENDLY_LINK} // Replace with your actual Calendly link
         styles={{
           height: '630px',
           visibility: isLoaded ? 'visible' : 'hidden'
