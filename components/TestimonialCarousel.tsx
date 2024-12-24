@@ -43,7 +43,7 @@ export function TestimonialCarousel() {
                     ))}
                   </div>
                   <blockquote className="mb-2 sm:mb-4 text-xs sm:text-sm">
-                    "{testimonial.quote}"
+                    &lsquo;{testimonial.quote}&lsquo;
                   </blockquote>
                   <div className="flex items-center gap-2 sm:gap-4">
                     <div>
