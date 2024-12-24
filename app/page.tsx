@@ -195,7 +195,7 @@ export default function Home() {
                 <span className="font-semibold">Radiance Clinic</span>
               </div>
               <p className="text-xs sm:text-sm text-muted-foreground">
-                Led by Dr. Prachi Khakhar, Radiance Clinic is Mumbai's premier destination for advanced laser hair removal
+                Led by Dr. Prachi Khakhar, Radiance Clinic is Mumbai&apos;s premier destination for advanced laser hair removal
                 and skincare treatments.
               </p>
             </div>
