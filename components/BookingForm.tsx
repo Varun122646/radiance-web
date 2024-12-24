@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import { InlineWidget } from "react-calendly"
-import { useToast } from "@/hooks/use-toast"
 import React from "react"
 
 interface BookingFormProps {
@@ -41,7 +40,6 @@ interface CalendlyProps {
 export const BookingForm = React.forwardRef<HTMLDivElement, BookingFormProps>(
   (props, ref) => {
   const [isLoaded, setIsLoaded] = useState(false)
-  const { toast } = useToast()
 
   useEffect(() => {
     // Simulate loading delay
@@ -49,12 +47,6 @@ export const BookingForm = React.forwardRef<HTMLDivElement, BookingFormProps>(
     return () => clearTimeout(timer)
   }, [])
 
-  const handleEventScheduled = (event: any) => {
-    toast({
-      title: "Consultation Scheduled!",
-      description: "We look forward to meeting with you.",
-    })
-  }
 
   const calendlyProps: CalendlyProps = {
     url: process.env.NEXT_PUBLIC_CALENDLY_LINK || 'https://calendly.com/varun-bartergram/30min',
@@ -91,10 +83,7 @@ export const BookingForm = React.forwardRef<HTMLDivElement, BookingFormProps>(
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#8B5E3C]"></div>
         </div>
       )}
-      <InlineWidget
-        {...calendlyProps}
-        onEventScheduled={handleEventScheduled}
-      />
+      <InlineWidget {...calendlyProps} />
       <p className="text-xs text-center text-muted-foreground">
         By scheduling a consultation, you agree to our terms and privacy policy.
       </p>
