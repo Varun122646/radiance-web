@@ -203,9 +203,9 @@ export default function Home() {
             <div>
               <h3 className="font-semibold mb-4 text-balance">Contact Us</h3>
               <div className="space-y-2 text-xs sm:text-sm text-muted-foreground">
-                <p>Radiance Clinic, Versova, Mumbai</p>
-                <p>Phone: +91-XXXXXXXXXX</p>
-                <p>Email: info@radianceclinic.com</p>
+                <p>Plot No. 180, Janki Devi School Road, SVP Nagar, Mhada Rd, Four Bungalows, Andheri West, Mumbai, Maharashtra 400053</p>
+                <p>Phone: +91-9333-91-9333.</p>
+                {/* <p>Email: info@radianceclinic.com</p> */}
               </div>
             </div>
             <div>
