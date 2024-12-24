@@ -12,7 +12,6 @@ import {
 import BA from "@/public/BA/3.png"
 import BA1 from "@/public/BA/4.png"
 import BA2 from "@/public/BA/2.png"
-import BA3 from "@/public/BA/2.png"
 
 export function BeforeAfterGallery() {
   return (

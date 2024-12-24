@@ -9,7 +9,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import { Star } from 'lucide-react'
-import Image from "next/image"
 
 export function TestimonialCarousel() {
   return (

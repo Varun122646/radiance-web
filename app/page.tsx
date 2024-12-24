@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image"
-import { Timer, Star, CheckCircle, Phone, Calendar, MessageCircle } from 'lucide-react'
+import { Timer, Star, CheckCircle, Calendar, MessageCircle } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { BookingForm } from "@/components/BookingForm"
@@ -9,7 +9,6 @@ import { TestimonialCarousel } from "@/components/TestimonialCarousel"
 import { BeforeAfterGallery } from "@/components/BeforeAfterGallery"
 import { CountdownTimer } from "@/components/CountdownTimer"
 import logo from "@/public/Logo.png"
-import hero from "@/public/Laser 1_2.1.1.jpg"
 import hero2 from "@/public/Laser 2_2.1.2.jpg"
 import { useRef } from "react"
 
