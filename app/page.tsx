@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image"
-import { Timer, Star, CheckCircle, Calendar, MessageCircle } from 'lucide-react'
+import { Timer, Star, CheckCircle, Calendar, MessageCircle, Youtube, Mail } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { BookingForm } from "@/components/BookingForm"
@@ -11,6 +11,8 @@ import { CountdownTimer } from "@/components/CountdownTimer"
 import logo from "@/public/Logo.png"
 import hero2 from "@/public/Laser 2_2.1.2.jpg"
 import { useRef } from "react"
+import { Instagram, } from 'lucide-react'
+
 
 export default function Home() {
   const bookingFormRef = useRef<HTMLDivElement>(null)
@@ -61,7 +63,7 @@ export default function Home() {
               <div className="flex items-center gap-2 pt-4">
                 <Star className="h-4 w-4 text-yellow-400" fill="currentColor" />
                 <p className="text-xs sm:text-sm text-muted-foreground">
-                  Trusted by 1000+ happy brides in Mumbai
+                  Trusted by 100+ happy brides in Mumbai
                 </p>
               </div>
             </div>
@@ -92,7 +94,7 @@ export default function Home() {
         <div className="container-custom py-6 md:py-8">
           <div className="grid grid-cols-2 gap-4 text-center sm:grid-cols-4">
             <div className="space-y-1">
-              <h3 className="text-xl font-bold sm:text-2xl md:text-3xl text-balance">1000+</h3>
+              <h3 className="text-xl font-bold sm:text-2xl md:text-3xl text-balance">100+</h3>
               <p className="text-xs sm:text-sm text-muted-foreground">Happy Brides</p>
             </div>
             <div className="space-y-1">
@@ -104,7 +106,7 @@ export default function Home() {
               <p className="text-xs sm:text-sm text-muted-foreground">Satisfaction Rate</p>
             </div>
             <div className="space-y-1">
-              <h3 className="text-xl font-bold sm:text-2xl md:text-3xl text-balance">5000+</h3>
+              <h3 className="text-xl font-bold sm:text-2xl md:text-3xl text-balance">900+</h3>
               <p className="text-xs sm:text-sm text-muted-foreground">Treatments Done</p>
             </div>
           </div>
@@ -195,22 +197,32 @@ export default function Home() {
                 <span className="font-semibold">Radiance Clinic</span>
               </div>
               <p className="text-xs sm:text-sm text-muted-foreground">
-                Led by Dr. Prachi Khakhar, Radiance Clinic is Mumbai&apos;s premier destination for advanced laser hair removal
-                and skincare treatments.
+              Radiance Cosmetics led by Dr. Prachi is your one-stop solution in Versova for all cosmetic and beauty needs. From advanced laser treatments to expert skincare, we are dedicated to helping you look and feel your best
               </p>
             </div>
             <div>
               <h3 className="font-semibold mb-4 text-balance">Contact Us</h3>
               <div className="space-y-2 text-xs sm:text-sm text-muted-foreground">
                 <p>Plot No. 180, Janki Devi School Road, SVP Nagar, Mhada Rd, Four Bungalows, Andheri West, Mumbai, Maharashtra 400053</p>
-                <p>Phone: +91-9333-91-9333.</p>
-                {/* <p>Email: info@radianceclinic.com</p> */}
+                <p>Phone: +91-7900126384.</p>
+                <p>Email: radiancecosmetic.in@gmail.com</p>
               </div>
             </div>
             <div>
               <h3 className="font-semibold mb-4 text-balance">Follow Us</h3>
               <div className="flex gap-4">
                 {/* Add social media icons/links here */}
+
+                <a href="https://www.instagram.com/drprachikhakhar/" target="_blank" rel="noopener noreferrer">
+                  <Instagram className="h-6 w-6 text-[#8B5E3C] hover:text-[#8B5E3C]/80" />
+                </a>
+                <a href="https://www.youtube.com/@Dr.PrachiKhakhar" target="_blank" rel="noopener noreferrer">
+                  <Youtube className="h-6 w-6 text-[#8B5E3C] hover:text-[#8B5E3C]/80" />
+                </a>
+                <a href="mailto:radiancecosmetic.in@gmail.com">
+                  <Mail className="h-6 w-6 text-[#8B5E3C] hover:text-[#8B5E3C]/80" />
+                </a>
+
               </div>
             </div>
           </div>

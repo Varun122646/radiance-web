@@ -49,7 +49,7 @@ export const BookingForm = React.forwardRef<HTMLDivElement, BookingFormProps>(
 
 
   const calendlyProps: CalendlyProps = {
-    url: process.env.NEXT_PUBLIC_CALENDLY_LINK || 'https://calendly.com/varun-bartergram/30min',
+    url: process.env.NEXT_PUBLIC_CALENDLY_LINK || 'https://calendly.com/radiancecosmetic-in',
     styles: {
       height: '630px',
       visibility: isLoaded ? 'visible' : 'hidden'
