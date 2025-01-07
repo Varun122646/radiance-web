@@ -8,7 +8,12 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Radiance Clinic - Bridal Laser Hair Removal',
   description: 'Get bridal-ready with painless laser hair removal at Radiance Clinic, Mumbai\'s premier destination for advanced skincare treatments.',
+  icons: {
+    icon: '/Asset 8@4x.png',
+    apple: '/Asset 8@4x.png'
+  }
 }
+
 
 export default function RootLayout({
   children,

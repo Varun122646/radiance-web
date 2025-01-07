@@ -1,8 +1,9 @@
 'use client'
 
 import { useState, useEffect } from "react"
-import { InlineWidget } from "react-calendly"
+import { InlineWidget, useCalendlyEventListener } from "react-calendly"
 import React from "react"
+import { useRouter } from 'next/navigation'
 
 interface BookingFormProps {
   ref?: React.RefObject<HTMLDivElement>
@@ -40,6 +41,7 @@ interface CalendlyProps {
 export const BookingForm = React.forwardRef<HTMLDivElement, BookingFormProps>(
   (props, ref) => {
   const [isLoaded, setIsLoaded] = useState(false)
+  const router = useRouter()
 
   useEffect(() => {
     // Simulate loading delay
@@ -47,6 +49,14 @@ export const BookingForm = React.forwardRef<HTMLDivElement, BookingFormProps>(
     return () => clearTimeout(timer)
   }, [])
 
+    // Add Calendly event listener
+    useCalendlyEventListener({
+      onEventScheduled: (e) => {
+        // Redirect to thank you page after successful booking
+        router.push('/thankyou')
+        
+      }
+    })
 
   const calendlyProps: CalendlyProps = {
     url: process.env.NEXT_PUBLIC_CALENDLY_LINK || 'https://calendly.com/radiancecosmetic-in',
