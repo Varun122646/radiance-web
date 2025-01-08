@@ -81,7 +81,7 @@ export default function Home() {
                     <p className="font-semibold text-[#8B5E3C] text-sm">Exclusive Bridal Offer</p>
                     <p className="text-lg font-bold sm:text-xl">Flat 25% Off</p>
                   </div>
-                  <CountdownTimer targetDate="2024-12-31" />
+                  <CountdownTimer />
                 </div>
               </Card>
             </div>

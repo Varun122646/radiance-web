@@ -51,7 +51,8 @@ export const BookingForm = React.forwardRef<HTMLDivElement, BookingFormProps>(
 
     // Add Calendly event listener
     useCalendlyEventListener({
-      onEventScheduled: (e) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      onEventScheduled: (_e) => {
         // Redirect to thank you page after successful booking
         router.push('/thankyou')
         

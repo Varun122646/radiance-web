@@ -1,11 +1,8 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
 import { CheckCircle } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
-import logo from '@/public/Asset 8@4x.png'
 
 export default function ThankYou() {
   return (
@@ -39,17 +36,17 @@ export default function ThankYou() {
             Thank You for Choosing Radiance!
           </h1>
           <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-xl mx-auto">
-            We've received your booking request and we're excited to help you on your beauty journey. You'll receive a confirmation email shortly with all the details.
+            We&apos;ve received your booking request and we&apos;re excited to help you on your beauty journey. You&apos;ll receive a confirmation email shortly with all the details.
           </p>
         </div>
 
         <div className="bg-gray-50 p-6 rounded-lg mt-8 space-y-4">
-          <h2 className="font-semibold text-gray-900">What's Next?</h2>
+          <h2 className="font-semibold text-gray-900">What&apos;s Next?</h2>
           <ul className="text-sm text-gray-600 space-y-2">
             <li>✨ Check your email for booking confirmation</li>
             <li>✨ Review your appointment details</li>
             <li>✨ Save the date in your calendar</li>
-            <li>✨ Also you'll recieve a call from our end!</li>
+            <li>✨ Also you&apos;ll recieve a call from our end!</li>
           </ul>
         </div>
 
