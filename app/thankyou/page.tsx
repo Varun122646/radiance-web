@@ -3,8 +3,12 @@
 import Image from 'next/image'
 import { CheckCircle } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { Button } from '@/components/ui/button'
+import { useRouter } from 'next/navigation'
+
 
 export default function ThankYou() {
+  const router = useRouter()
   return (
     <div className="container-custom py-16 md:py-24 lg:py-32 min-h-[80vh] flex items-center justify-center">
       <motion.div 
@@ -50,25 +54,21 @@ export default function ThankYou() {
           </ul>
         </div>
 
-        {/* <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-          <Button 
-            variant="outline"
-            className="border-[#A31621] text-[#A31621] hover:bg-[#A31621] hover:text-white"
-            asChild
-          >
-            <Link href="/services">
-              Browse More Services
-            </Link>
-          </Button>
-          <Button 
-            className="bg-[#A31621] hover:bg-[#A31621]/90"
-            asChild
-          >
-            <Link href="/dashboard">
-              View My Bookings
-            </Link>
-          </Button>
-        </div> */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+            <Button
+            className="w-full sm:w-auto bg-[#A31621] text-white hover:bg-[#870f16]"
+            onClick={() => router.push('https://radiancecosmetic.in/about/')}
+            >
+            About Us
+            </Button>
+            <Button
+            onClick={() => router.push('https://radiancecosmetic.in/services/')}
+            variant="secondary"
+            className="w-full sm:w-auto bg-gray-200 text-[#A31621] hover:bg-gray-300"
+            >
+            Explore Services
+            </Button>
+        </div>
       </motion.div>
     </div>
   )

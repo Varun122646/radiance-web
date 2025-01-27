@@ -19,7 +19,7 @@ export function TestimonialCarousel() {
             What Our Clients Say
           </h2>
           <p className="mx-auto max-w-[700px] text-gray-500 text-sm sm:text-base md:text-lg">
-            Real stories from our happy brides
+            Real stories from our happy customers
           </p>
         </div>
         <Carousel
@@ -69,25 +69,25 @@ const testimonials = [
   {
     quote: "Dr. Prachi and her team were amazing! My skin looks incredible, and I felt so confident on my wedding day!",
     name: "Pooja S.",
-    title: "Recent Bride",
+    title: "Satisfied Customer",
     avatar: "/placeholder.svg",
   },
   {
     quote: "The laser treatment was painless and so effective. Radiance Clinic truly exceeded my expectations!",
     name: "Anjali M.",
-    title: "Bride-to-Be",
+    title: "Happy Client",
     avatar: "/placeholder.svg",
   },
   {
     quote: "Best decision I made for my wedding prep! The results are amazing and the staff is so professional.",
     name: "Priya R.",
-    title: "Recent Bride",
+    title: "Satisfied Customer",
     avatar: "/placeholder.svg",
   },
   {
     quote: "Incredible results! I'm so happy I chose Radiance Clinic for my bridal preparation.",
     name: "Sneha K.",
-    title: "Bride-to-Be",
+    title: "Recent Client",
     avatar: "/placeholder.svg",
   },
 ]

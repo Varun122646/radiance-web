@@ -1,9 +1,9 @@
 'use client'
 import Image from "next/image"
-import { Timer, Star, CheckCircle, Calendar, MessageCircle, Youtube, Mail } from 'lucide-react'
+import { Timer, Star, CheckCircle, MessageCircle, Youtube, Mail, PhoneCall } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { BookingForm } from "@/components/BookingForm"
+import { ContactForm } from "@/components/BookingForm"
 import { FAQAccordion } from "@/components/FAQAccordion"
 import { TestimonialCarousel } from "@/components/TestimonialCarousel"
 import { BeforeAfterGallery } from "@/components/BeforeAfterGallery"
@@ -37,7 +37,7 @@ export default function Home() {
             <span className="md:text-2xl font-bold text-[#8f4955]">Radiance Clinic</span>
           </div>
           <div className="flex items-center gap-4 ">
-            <Button className="bg-[#8B5E3C] hover:bg-[#8B5E3C]/90" size="sm" onClick={scrollToBookingForm}>Book Consultation</Button>
+            <Button className="bg-[#8B5E3C] hover:bg-[#8B5E3C]/90" size="sm" onClick={scrollToBookingForm}>Get Quote</Button>
           </div>
         </div>
       </header>
@@ -49,7 +49,7 @@ export default function Home() {
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">
                 <h1 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl/none text-balance">
-                  Get Bridal-Ready with Painless Laser Hair Removal
+                  Smooth, Flawless Skin with Painless Laser Hair Removal
                 </h1>
                 <p className="max-w-[600px] text-gray-500 text-sm sm:text-base md:text-lg">
                   Step into your big day with smooth, flawless skin. Expert-led treatments for lasting results.
@@ -57,13 +57,13 @@ export default function Home() {
               </div>
               <div className="flex flex-col gap-2 sm:flex-row">
                 <Button size="sm" className="bg-[#8B5E3C] hover:bg-[#8B5E3C]/90" onClick={scrollToBookingForm}>
-                  Book Your Free Consultation
+                  Get Quote Now
                 </Button>
               </div>
               <div className="flex items-center gap-2 pt-4">
                 <Star className="h-4 w-4 text-yellow-400" fill="currentColor" />
                 <p className="text-xs sm:text-sm text-muted-foreground">
-                  Trusted by 100+ happy brides in Mumbai
+                  Trusted by 100+ happy customers in Mumbai
                 </p>
               </div>
             </div>
@@ -78,7 +78,7 @@ export default function Home() {
               <Card className="absolute bottom-4 left-4 right-4 p-4 bg-[#F5F1EB]/95 backdrop-blur supports-[backdrop-filter]:bg-[#F5F1EB]/60">
                 <div className="flex items-center gap-4">
                   <div className="flex-1">
-                    <p className="font-semibold text-[#8B5E3C] text-sm">Exclusive Bridal Offer</p>
+                    <p className="font-semibold text-[#8B5E3C] text-sm">Exclusive New Year Offer</p>
                     <p className="text-lg font-bold sm:text-xl">Flat 25% Off</p>
                   </div>
                   <CountdownTimer />
@@ -95,7 +95,7 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-4 text-center sm:grid-cols-4">
             <div className="space-y-1">
               <h3 className="text-xl font-bold sm:text-2xl md:text-3xl text-balance">100+</h3>
-              <p className="text-xs sm:text-sm text-muted-foreground">Happy Brides</p>
+              <p className="text-xs sm:text-sm text-muted-foreground">Happy Customers</p>
             </div>
             <div className="space-y-1">
               <h3 className="text-xl font-bold sm:text-2xl md:text-3xl text-balance">10+</h3>
@@ -121,7 +121,7 @@ export default function Home() {
               Why Choose Laser Hair Removal at Radiance Clinic?
             </h2>
             <p className="mx-auto max-w-[700px] text-gray-500 text-sm sm:text-base md:text-lg">
-              Experience the gold standard in bridal beauty treatments
+              Experience the gold standard in cosmetic beauty treatments
             </p>
           </div>
           <div className="grid gap-6 pt-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -151,7 +151,7 @@ export default function Home() {
             <div className="grid gap-6 lg:grid-cols-2">
               <div>
                 <h2 className="text-2xl font-bold tracking-tighter mb-4 sm:text-3xl md:text-4xl text-balance">
-                  Book Your Free Consultation Today
+                  Get a Free Quote Today
                 </h2>
                 <p className="text-muted-foreground mb-6 text-sm sm:text-base">
                   Take the first step towards flawless skin for your special day. Our experts are ready to create your
@@ -159,8 +159,8 @@ export default function Home() {
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-[#8B5E3C]" />
-                    <span className="text-sm sm:text-base">Flexible appointment slots</span>
+                    <PhoneCall className="h-4 w-4 sm:h-5 sm:w-5 text-[#8B5E3C]" />
+                    <span className="text-sm sm:text-base">Get a free quote over the phone</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5 text-[#8B5E3C]" />
@@ -172,7 +172,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <BookingForm />
+              <ContactForm />
             </div>
           </Card>
         </div>
