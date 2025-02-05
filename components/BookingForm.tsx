@@ -55,7 +55,7 @@
 //       onEventScheduled: (_e) => {
 //         // Redirect to thank you page after successful booking
 //         router.push('/thankyou')
-        
+
 //       }
 //     })
 
@@ -103,33 +103,66 @@
 // })
 
 // BookingForm.displayName = "BookingForm"
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useState } from "react";
 
 export function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
 
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setError(null);
+    setSuccess(null);
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    setIsSubmitting(true)
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      number: formData.get("whatsapp"),
+    };
 
-    const form = event.currentTarget
-    form.submit()
-  }
+    try {
+      const response = await fetch(
+        "https://api.bartergram.co/api/v1/radiance-quotes",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Error submitting quote request");
+      }
+
+      const result = await response.json();
+      setSuccess(result.message);
+      form.reset();
+
+      setTimeout(() => {
+        setSuccess(null);
+      }, 5000);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (error: any) {
+      setError(error.message);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="bg-[#F5F1EB] p-8 rounded-lg shadow-md max-w-md mx-auto">
-      <form 
-        action={process.env.NEXT_PUBLIC_WEB_APP_URL} 
-        method="POST" 
-        onSubmit={handleSubmit} 
-        className="space-y-6"
-      >
+      <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <Label htmlFor="name" className="text-[#1C1C1C] font-semibold">
             Name
@@ -172,10 +205,16 @@ export function ContactForm() {
         >
           {isSubmitting ? "Submitting..." : "Get Quote"}
         </Button>
+        {error && (
+          <p className="text-red-500 text-xs text-center mt-4">{error}</p>
+        )}
+        {success && (
+          <p className="text-green-500 text-xs text-center mt-4">{success}</p>
+        )}
         <p className="text-xs text-center text-[#1C1C1C] mt-4">
           By submitting this form, you agree to our terms and privacy policy.
         </p>
       </form>
     </div>
-  )
+  );
 }
