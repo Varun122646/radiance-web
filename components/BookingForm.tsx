@@ -108,13 +108,14 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import Router from "next/router";
+import {useRouter} from "next/router";
 import { useState } from "react";
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
+  const router = useRouter();
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -149,7 +150,7 @@ export function ContactForm() {
       const result = await response.json();
       setSuccess(result.message);
       form.reset();
-      Router.push("/thankyou");
+      router.push("/thankyou");
 
       setTimeout(() => {
         setSuccess(null);
